@@ -7,8 +7,9 @@ class UsersController < ApplicationController
     # => app/views/users/show.html.erb
   end
 
-    # GET  /users/new
+    # GET  /users/new or /signup
   def new
+    @user = User.new
     # => app/views/users/new.html.erb
   end
 end
