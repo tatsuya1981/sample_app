@@ -15,6 +15,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       #  => Success
+      flash[:success] = "Welcome to the Sample APP!"
+      redirect_to @user # => GET /users/:id
+      # redirect_to user_path(@user) # => GET /user/:id
     else
       render 'new', status: :unprocessable_entity
     end
